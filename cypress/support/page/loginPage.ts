@@ -23,9 +23,14 @@ class LoginPage {
         commands.clickButton(loginElements.loginButton());
     };
 
-    verifyUsernameExists(username: string) : void {
-        commands.verifyTextExists(username);
+    verifyErrorMessage(errorMessage: string) : void {
+        commands.verifyTextExists(errorMessage);
     };
+
+    clickNeedAnAccount() : void {
+        commands.clickButton(loginElements.needAnAccountButton());
+    };
+
 
 };
 
