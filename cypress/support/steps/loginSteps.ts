@@ -9,12 +9,20 @@ Given("acesso ao site", () => {
     loginPage.visitLoginUrl();
 });
 
-When("preencher o campo e-mail {}", (email: string) => {
-    loginPage.fillEmail(email);
+When("preencher o campo e-mail corretamente", () => {
+    loginPage.fillEmail('usuario@deteste.com');
 });
 
-When("preencher o campo senha {}", (password: string) => {
-    loginPage.fillPassword(password);
+When("preencher o campo senha corretamente", () => {
+    loginPage.fillPassword('123456');
+});
+
+When("preencher o campo e-mail incorretamente", () => {
+    loginPage.fillEmail('usuario@invalido.com');
+});
+
+When("preencher o campo senha incorretamente", () => {
+    loginPage.fillPassword('senhaInvalida');
 });
 
 When("clicar no botão entrar", () => {
