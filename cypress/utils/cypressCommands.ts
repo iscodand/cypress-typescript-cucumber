@@ -1,17 +1,29 @@
 /// <reference types="cypress" />
 
+
 class CypressCommands {
 
-    login(email: string, password: string) : void {
-        cy.request('https://api.realworld.io/api/users/login/', {
-            email,
-            password,
-        }).then((response) => {
-            window.localStorage.setItem("token", response.body.token);
+    login() {
+        let request = {
+            "user": {
+                "email": "usuario@deteste.com",
+                "password": "123456",
+            }
+        };
+
+        cy.request('POST',
+                   'https://api.realworld.io/api/users/login',
+                   request)
+                   .then((response) => {
+                   window.localStorage.setItem("jwtToken", response.body.user.token);
         });
     };
 
     visit(url: string) : void {
+        cy.visit(url);
+    };
+
+    cleanVisit(url: string) : void {
         cy.clearAllCookies();
         cy.clearAllLocalStorage();
         cy.visit(url);
@@ -27,6 +39,14 @@ class CypressCommands {
 
     verifyTextExists(text: string) : void {
         cy.contains(text);
+    };
+
+    clickIfTextExists(text: string) : void {
+        cy.contains(text).click();
+    };
+
+    clearTextArea(field: string) : void {
+        cy.get(field).clear();
     };
 
 };
