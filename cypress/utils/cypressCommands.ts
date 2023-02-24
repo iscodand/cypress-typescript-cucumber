@@ -2,6 +2,15 @@
 
 class CypressCommands {
 
+    login(email: string, password: string) : void {
+        cy.request('https://api.realworld.io/api/users/login/', {
+            email,
+            password,
+        }).then((response) => {
+            window.localStorage.setItem("token", response.body.token);
+        });
+    };
+
     visit(url: string) : void {
         cy.clearAllCookies();
         cy.clearAllLocalStorage();
