@@ -31,7 +31,6 @@ class LoginPage {
         commands.clickButton(loginElements.needAnAccountButton());
     };
 
-
 };
 
 const loginPage = new LoginPage();
