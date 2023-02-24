@@ -7,7 +7,7 @@ const BASE_URL = Cypress.env('BASE_URL');
 class LoginPage {
 
     visitLoginUrl(): void {
-        commands.visit(BASE_URL);
+        commands.cleanVisit(BASE_URL);
         commands.clickButton(loginElements.accessLogin());
     };
 
