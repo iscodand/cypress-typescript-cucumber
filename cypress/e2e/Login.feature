@@ -10,8 +10,8 @@ Feature: Realizar o teste dos cenários da tela de login
         Then deve ser apresentado o texto <text>
 
         Examples:
-            | text             |
-            | usuario_de_teste |
+            | text     |
+            | Settings |
 
     Scenario Outline: Tentar realizar login com e-mail inválido
         When preencher o campo e-mail incorretamente
