@@ -21,8 +21,16 @@ When("alterar nome de usuário corretamente", () => {
     profilePage.changeUsername();
 });
 
+When("alterar e-mail para um e-mail existente", () => {
+    profilePage.changeEmailInvalid();
+});
+
 When("salvar a atualização", () => {
     profilePage.clickUpdateSettings();
+});
+
+When("clicar no botão de Logout", () => {
+    profilePage.clickButtonLogout();
 });
 
 Then("a nova bio deve ser apresentada no perfil do usuário", () => {
@@ -31,4 +39,8 @@ Then("a nova bio deve ser apresentada no perfil do usuário", () => {
 
 Then("o novo nome de usuário deve ser apresentado no perfil do usuário", () => {
     profilePage.verifyUsernameIsUpdated();
+});
+
+Then("a aplicação deve redirecionar para a tela Home", () => {
+    profilePage.verifyLogoutSuccessful();
 });
