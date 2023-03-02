@@ -13,3 +13,16 @@ Feature: Realizar o teste dos cenários da tela de Perfil
         When alterar nome de usuário corretamente
         When salvar a atualização
         Then o novo nome de usuário deve ser apresentado no perfil do usuário
+
+    Scenario Outline: Alterar e-mail para um e-mail existente
+        When alterar e-mail para um e-mail existente
+        When salvar a atualização
+        Then deve ser apresentada uma mensagem de erro <errorMessage>
+
+        Examples:
+            | errorMessage             |
+            | email already registered |
+
+    Scenario: Realizar logout com sucesso
+        When clicar no botão de Logout
+        Then a aplicação deve redirecionar para a tela Home
