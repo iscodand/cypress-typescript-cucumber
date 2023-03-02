@@ -4,8 +4,8 @@ class LoginElements {
 
     needAnAccountButton = () => { return ('p.text-xs-center > [ui-sref="app.register"]'); };
 
-    emailField = () => { return (':nth-child(2) > .form-control'); };
-    passwordField = () => { return (':nth-child(3) > .form-control'); };
+    emailField = () => { return ('input[placeholder="Email"]'); };
+    passwordField = () => { return ('input[placeholder="Password"]'); };
     loginButton = () => { return ('.btn'); };
 
 }
