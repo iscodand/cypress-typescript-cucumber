@@ -49,11 +49,13 @@ async function setupNodeEvents(
 export default defineConfig({
   env: {
     "BASE_URL": "https://demo.realworld.io/",
-    "PROFILE_URL": "https://demo.realworld.io/#/settings"
+    "PROFILE_URL": "https://demo.realworld.io/#/settings",
   },
   e2e: {
     specPattern: "**/*.feature",
     supportFile: false,
+    video: false,
+    screenshotOnRunFailure: false,
     setupNodeEvents
   },
 });
