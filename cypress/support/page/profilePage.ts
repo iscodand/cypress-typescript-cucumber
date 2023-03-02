@@ -1,9 +1,11 @@
+// @ts-check
+
 import profileElements from "../elements/profileElements";
 import commands from "../../utils/cypressCommands";
 import mockData from "../../utils/faker";
 
 
-const PROFILE_URL = Cypress.env('PROFILE_URL');
+const PROFILE_URL: string = Cypress.env('PROFILE_URL');
 
 class ProfilePage {
 
@@ -19,9 +21,9 @@ class ProfilePage {
         commands.fillField(profileElements.changeBioField(), this.bio);
     };
 
-    changeUsername() {
+    changeUsername(username: string = this.username) {
         commands.clearTextArea(profileElements.changeUsernameField());
-        commands.fillField(profileElements.changeUsernameField(), this.username);
+        commands.fillField(profileElements.changeUsernameField(), username);
     };
 
     clickUpdateSettings() {
