@@ -2,7 +2,7 @@ import loginElements from "../elements/loginElements";
 import commands from "../../utils/cypressCommands";
 
 
-const BASE_URL = Cypress.env('BASE_URL');
+const BASE_URL: string = Cypress.env('BASE_URL');
 
 class LoginPage {
 
@@ -11,23 +11,23 @@ class LoginPage {
         commands.clickButton(loginElements.accessLogin());
     };
 
-    fillEmail(email: string) : void {
+    fillEmail(email: string): void {
         commands.fillField(loginElements.emailField(), email);
     };
 
-    fillPassword(password: string) : void {
+    fillPassword(password: string): void {
         commands.fillField(loginElements.passwordField(), password);
     };
 
-    clickLogin() : void {
+    clickLogin(): void {
         commands.clickButton(loginElements.loginButton());
     };
 
-    verifyErrorMessage(errorMessage: string) : void {
+    verifyErrorMessage(errorMessage: string): void {
         commands.verifyTextExists(errorMessage);
     };
 
-    clickNeedAnAccount() : void {
+    clickNeedAnAccount(): void {
         commands.clickButton(loginElements.needAnAccountButton());
     };
 
