@@ -4,17 +4,20 @@ import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import loginPage from "../page/loginPage";
 import commands from "../../utils/cypressCommands";
 
+const email: string = Cypress.env('email');
+const password: string = Cypress.env('email');
+
 
 Given("acesso ao site", () => {
     loginPage.visitLoginUrl();
 });
 
 When("preencher o campo e-mail corretamente", () => {
-    loginPage.fillEmail('usuario@deteste.com');
+    loginPage.fillEmail(email);
 });
 
 When("preencher o campo senha corretamente", () => {
-    loginPage.fillPassword('123456');
+    loginPage.fillPassword(password);
 });
 
 When("preencher o campo e-mail incorretamente", () => {
