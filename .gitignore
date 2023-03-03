@@ -3,6 +3,8 @@ cypress/videos
 cypress/screenshots
 cypress/downloads
 cypress.env.json
+allure-report
+allure-results
 
 # Logs
 logs
