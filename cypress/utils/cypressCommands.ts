@@ -10,7 +10,7 @@ class CypressCommands {
         let request = {
             "user": {
                 "email": email,
-                "password": password,
+                "password": `"${password}"`,
             }
         };
 
