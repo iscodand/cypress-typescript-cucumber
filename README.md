@@ -17,10 +17,10 @@
 > All goals and Features to be added.
 
 - [X] ~~Cucumber Integration~~
-- [ ] Allure Reports
+- [X] ~~Allure Reports~~
+- [ ] CI with Github Actions
 - [ ] Github Page with Allure Reports
 - [ ] Containerization with Docker
-- [ ] CI with Github Actions
 
 ## How to install this project
 
@@ -39,14 +39,16 @@ $ npm install
 > Make sure you is inside project path
 
 ```
-# Run locally
-$ npm run cypress:run
-
-# Run locally with headed mode
-$ npm run cypress:run:headed
-
 # Open Cypress UI and run tests
 $ npm run cypress:open
+
+# Run locally (note: with Allure Reports)
+$ npm run cypress:run
+
+# Run locally with headed mode (note: with Allure Reports)
+
+# Generate Page with Reports
+$ npm run allure:report
 ```
 
 ## Contributing
@@ -63,12 +65,12 @@ If you have a suggestion that would make this project better, feel free to fork 
 
 <br>
 
-**Don't forget to give the project a star!** ⭐   
+**Don't forget to give the project a star!** ⭐
 
-<br> 
- 
+<br>
+
 > ℹ️ **Did you know?**
-> 
+>
 > In 2012, GitHub launched the starring function.
 > Stars were a new way to keep track of repositories that caught your attention.
 > In GitHub social etiquette, starring a repo is not only way to bookmark a project but also to express **how much you appreciated and found it interesting!**
