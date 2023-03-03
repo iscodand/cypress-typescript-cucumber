@@ -1,6 +1,8 @@
 import { defineConfig } from "cypress";
-import * as webpack from "@cypress/webpack-preprocessor";
 import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
+
+const allureWriter = require('@shelex/cypress-allure-plugin/writer');
+const webpack = require("@cypress/webpack-preprocessor");
 
 async function setupNodeEvents(
   on: Cypress.PluginEvents,
@@ -8,6 +10,7 @@ async function setupNodeEvents(
 ): Promise<Cypress.PluginConfigOptions> {
   // This is required for the preprocessor to be able to generate JSON reports after each run, and more,
   await addCucumberPreprocessorPlugin(on, config);
+  await allureWriter(on, config);
 
   on(
     "file:preprocessor",
@@ -50,10 +53,11 @@ export default defineConfig({
   env: {
     "BASE_URL": "https://demo.realworld.io/",
     "PROFILE_URL": "https://demo.realworld.io/#/settings",
+    "allureResultsPath": "allure-results",
+    allureReuseAfterSpec: true
   },
   e2e: {
     specPattern: "**/*.feature",
-    supportFile: false,
     video: false,
     screenshotOnRunFailure: false,
     setupNodeEvents
