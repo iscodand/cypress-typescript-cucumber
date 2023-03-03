@@ -1,0 +1,42 @@
+name: Execução automação de testes
+
+on:
+  workflow_dispatch:
+    inputs:
+      browser:
+        description: 'Browser: chrome / electron'
+        required: false
+        default: 'electron'
+  pull_request:
+    branches: [ master ]
+  schedule:
+    - cron: "0 0 * * *"
+
+env:
+  DEFAULT_BROWSER: "electron"
+
+jobs:
+  test:
+    name: Cypress run
+    runs-on: ubuntu-latest
+    container: cypress/browsers:node14.16.0-chrome90-ff88
+    steps:
+      - uses: actions/checkout@v2
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          command: npx cypress run --browser ${{github.event.inputs.browser || env.DEFAULT_BROWSER}} --env email=${{ secrets.EMAIL }} password=${{ secrets.PASSWORD }}
+      - name: Generate Allure Report
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        with:
+          allure_results: allure-results
+          allure_history: allure-history
+          keep_reports: 20
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: allure-history
