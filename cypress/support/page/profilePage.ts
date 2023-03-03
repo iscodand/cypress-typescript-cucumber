@@ -7,8 +7,8 @@ const PROFILE_URL: string = Cypress.env('PROFILE_URL');
 
 class ProfilePage {
 
-    public bio: string = mockData.generateRandomBio();
-    public username: string = mockData.generateRandomUsername();
+    private bio: string = mockData.generateRandomBio();
+    private username: string = mockData.generateRandomUsername();
 
     visitProfileUrl(): void {
         commands.visit(PROFILE_URL);
