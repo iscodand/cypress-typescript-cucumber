@@ -18,9 +18,9 @@
 
 - [X] ~~Cucumber Integration~~
 - [ ] Allure Reports
+- [ ] CI with Github Actions
 - [ ] Github Page with Allure Reports
 - [ ] Containerization with Docker
-- [ ] CI with Github Actions
 
 ## How to install this project
 
