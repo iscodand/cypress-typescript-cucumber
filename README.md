@@ -1,20 +1,20 @@
-<h1 align="center"> Cypress Test Automation </h1>
+<h1> Cypress Test Automation </h1>
 
-<p align="center">
+<p>
 	<img src="https://img.shields.io/github/license/iscodand/cypress-typescript-cucumber?color=green"/>
 	<img src="https://img.shields.io/github/repo-size/iscodand/cypress-typescript-cucumber?color=green"/>
 	<img src="https://img.shields.io/github/last-commit/iscodand/cypress-typescript-cucumber?color=green"/>
 </p>
 
-<p>Cypress test automation made with Cypress + Typescript + Cucumber.</p>
+<p>Cypress test automation made with Typescript + Cucumber.</p>
 
 ## Introduction
 
-This project have the main objective of *improve my skills with Cypress and his tools and integrations*.
+> This project have the main objective of *improve my skills with Cypress and his tools and integrations*.
 
 ## Goals and Features
 
-> All goals and Features to be added on this project.
+> All goals and Features to be added.
 
 - [X] ~~Cucumber Integration~~
 - [ ] Allure Reports
@@ -24,13 +24,13 @@ This project have the main objective of *improve my skills with Cypress and his 
 
 ## How to install this project
 
-> Make sure you have [Node](https://nodejs.org/en/download/current/) installed on your machine
+> Make sure you have [Node v18.12.1](https://nodejs.org/en/download/current/) (or higher) installed on your machine
 
 ```
-Clone this project
+# Clone this project
 $ git clone https://github.com/iscodand/cypress-typescript-cucumber/
 
-Install dependencies
+# Install dependencies
 $ npm install
 ```
 
@@ -39,17 +39,15 @@ $ npm install
 > Make sure you is inside project path
 
 ```
-Run locally
-npm run cypress:run
+# Run locally
+$ npm run cypress:run
 
-Run locally with headed mode
-npm run cypress:run --headed
+# Run locally with headed mode
+$ npm run cypress:run:headed
+
+# Open Cypress UI and run tests
+$ npm run cypress:open
 ```
-
-Parameters usage
-| Variable | Description                    | Example | Default |
-| -------- | ------------------------------ | ------- | ------- |
-| headed   | Use headless mode              | `true`  | `false` |
 
 ## Contributing
 
