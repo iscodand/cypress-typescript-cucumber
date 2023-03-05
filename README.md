@@ -18,7 +18,7 @@
 
 - [X] ~~Cucumber Integration~~
 - [X] ~~Allure Reports~~
-- [X] CI with Github Actions
+- [X] ~~CI with Github Actions~~
 - [ ] Github Page with Allure Reports
 - [ ] Containerization with Docker
 
