@@ -51,7 +51,7 @@ async function setupNodeEvents(
 
 export default defineConfig({
   env: {
-    "BASE_URL": "https://demo.realworld.io/",
+    "BASE_URL": "https://demo.realworld.io",
     "PROFILE_URL": "https://demo.realworld.io/#/settings",
     "allureResultsPath": "allure-results",
     allureReuseAfterSpec: true
