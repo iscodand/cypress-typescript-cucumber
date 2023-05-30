@@ -6,7 +6,7 @@
 	<img src="https://img.shields.io/github/last-commit/iscodand/cypress-typescript-cucumber?color=green"/>
 </p>
 
-<p>Cypress test automation made with Typescript + Cucumber</p>
+<p>Cypress E2E Web Automation made with Typescript + Cucumber</p>
 
 ## Introduction
 
